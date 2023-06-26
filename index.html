@@ -17,7 +17,7 @@
 </head>
 <body>
   <main class="main">
-    <div class="card">
+    <div class="card" id="card-form">
       <div class="card__content">
         <h1 class="card__title">Stay updated!</h1>
         <p class="card__text">Join 60,000+ product managers receiving monthly<span class="card__text--block">updates on:</span></p>
@@ -41,6 +41,15 @@
         </div>
       </div>
       <div class="card__bg"></div>
+    </div>
+    <div class="card__success" id="card-success">
+      <img src="/assets/images/icon-success.svg" alt="icon list">
+      <h1 class="card__title card__title--success">Thanks for subscribing!</h1>
+      <p class="card__text">
+        A confirmation email has been sent to <span class="card__text--bold" id="mensaje-success">ash@loremcompany.com</span>.
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <button class="form__btn-submit form__btn-submit--dismiss" id="dismiss">Dismiss message</button>
     </div>
   </main>
   <script src="/js/app.js"></script>

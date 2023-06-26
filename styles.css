@@ -62,6 +62,12 @@ input, textarea, button, select{
     padding: 0;
     min-height: 480px;
 }
+.card--none{
+    display: none;
+}
+.card--block{
+    display: block;
+}
 @media (min-width: 850px){ 
     .card{
         grid-template-columns: repeat(2, 1fr);
@@ -70,6 +76,21 @@ input, textarea, button, select{
         grid-template-areas: 'contenido imagen';
         padding: 1rem 1rem 1rem 3rem;
     }
+}
+.card__success{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    grid-template-columns: repeat(1 , 1fr);
+    width: 350px;
+    min-height: 300px;
+    background-color: var(--White);
+    border-radius: 1.4rem;
+    display: none;
+}
+.card__success--block{
+    display: block;
 }
 .card__bg{
     grid-area: imagen;
@@ -104,6 +125,10 @@ input, textarea, button, select{
     font-weight: 700;
     color: var(--DarkSlateGrey);
 }
+.card__title--success{
+    font-size: 2.7rem;
+    margin: 1rem 0;
+}
 .card__text{
     font-weight: 400;
     color: var(--DarkSlateGrey);
@@ -111,6 +136,9 @@ input, textarea, button, select{
 }
 .card__text--block{
     display: block;
+}
+.card__text--bold{
+    font-weight: 700;
 }
 .card__list{
     display: flex;
@@ -174,6 +202,15 @@ input, textarea, button, select{
 .form__btn-submit:hover{
     cursor: pointer;
     background-color: var(--Tomato);
+}
+.form__btn-submit--dismiss{
+    width: 100%;
+    margin-top: 10rem;
+}
+@media (min-width: 850px){ 
+    .form__btn-submit--dismiss{
+        margin-top: 1rem;
+    }
 }
 .form__mensaje{
     position: absolute;
