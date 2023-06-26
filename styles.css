@@ -1,0 +1,189 @@
+:root{
+    /* ## Colors */
+    /* ### Primary */
+    --Green: #4cd137;
+    --GreenOpacity: rgba(76, 209, 55, .2);
+    --Tomato: hsl(4, 100%, 67%);
+    --TomatoOpacity: hsl(4, 100%, 67%, .2);
+
+    /* ### Neutral */
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+
+    --fuentePrincipal: 'Roboto', sans-serif;
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+body{
+    font-size: 16px;
+    font-family: var(--fuentePrincipal);
+    min-height: 100vh;
+    background-color: var(--White);
+}
+@media (min-width: 850px){ 
+    body{
+        display: grid;
+        place-items: center;
+        background-color: var(--CharcoalGrey);
+    }
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+input, textarea, button, select{
+    font: inherit;
+}
+/* Styles */
+.main{
+    max-width: 60rem;
+    margin-inline: auto;
+}
+.card{
+    display: grid;
+    grid-template-areas: 
+        'imagen'
+        'contenido'
+    ;
+    background-color: var(--White);
+    border-radius: 1.4rem;
+    padding: 0;
+    min-height: 480px;
+}
+@media (min-width: 850px){ 
+    .card{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        width: 850px;
+        grid-template-areas: 'contenido imagen';
+        padding: 1rem 1rem 1rem 3rem;
+    }
+}
+.card__bg{
+    grid-area: imagen;
+    background-image: url('/assets/images/illustration-sign-up-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 250px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+@media (min-width: 850px){ 
+    .card__bg{
+        min-height: 400px;
+        border-radius: .7rem;
+        background-image: url('/assets/images/illustration-sign-up-desktop.svg');
+    }
+}
+.card__content{
+    grid-area: contenido;
+    padding: 0 1.5rem 0 1.5rem;
+}
+@media (min-width: 850px){ 
+    .card__content{
+        padding: 0;
+    }
+}
+.card__title{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--DarkSlateGrey);
+}
+.card__text{
+    font-weight: 400;
+    color: var(--DarkSlateGrey);
+    line-height: 1.4;
+}
+.card__text--block{
+    display: block;
+}
+.card__list{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: .5rem;
+}
+.card__list:first-of-type{
+    margin-top: 1rem;
+}
+.card__form{
+    display: grid;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+@media (min-width: 850px){ 
+    .card__form{
+        margin-bottom: 0;
+    }
+}
+.form__label{
+    color: var(--DarkSlateGrey);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: .3rem;
+}
+.form__input{
+    padding: .8rem 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--Grey);
+    outline-color: var(--Grey);
+}
+.form__input:hover{
+    cursor: pointer;
+}
+.form__input::placeholder{
+    font-size: 14px;
+    color: var(--Grey);
+}
+.form__input--error{
+    background-color: var(--TomatoOpacity);
+    border: 1px solid var(--Tomato);
+    color: var(--Tomato);
+}
+.form__input--success{
+    color: var(--Green);
+    border: 1px solid var(--Green);
+    background-color: var(--GreenOpacity);
+}
+.form__btn-submit{
+    background-color: var(--DarkSlateGrey);
+    color: var(--White);
+    padding: .8rem 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+.form__btn-submit:hover{
+    cursor: pointer;
+    background-color: var(--Tomato);
+}
+.form__mensaje{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    font-weight: 700;
+    visibility: hidden;
+}
+.form__mensaje--error{
+    visibility: visible;
+    color: var(--Tomato);
+}
